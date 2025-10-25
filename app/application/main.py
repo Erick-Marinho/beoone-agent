@@ -6,6 +6,7 @@ middlewares, routers e configurações necessárias.
 """
 
 from fastapi import FastAPI
+
 from app.config import get_settings
 
 # Obter configurações
@@ -15,7 +16,7 @@ settings = get_settings()
 app = FastAPI(
     title="Beoone Agent API",
     description="API para o sistema Beoone Agent",
-    version="1.0.0"
+    version="1.0.0",
 )
 
 
@@ -28,8 +29,4 @@ async def root():
 @app.get("/health")
 async def health_check():
     """Endpoint de verificação de saúde da aplicação"""
-    return {
-        "status": "healthy",
-        "service": "beoone-agent",
-        "version": "1.0.0"
-    }
+    return {"status": "healthy", "service": "beoone-agent", "version": "1.0.0"}

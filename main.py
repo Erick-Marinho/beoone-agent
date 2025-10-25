@@ -2,10 +2,12 @@
 Ponto de entrada da aplicação
 
 Este arquivo serve como ponto de entrada principal para executar a aplicação fastapi.
-Ele importa a instância do aplicativo fastapi e inicia o servidor uvicorn para executar a aplicação.
+Ele importa a instância do aplicativo fastapi e inicia o servidor uvicorn para
+executar a aplicação.
 """
 
 import uvicorn
+
 from app.config import get_settings
 
 if __name__ == "__main__":
@@ -20,4 +22,3 @@ if __name__ == "__main__":
         reload=config.api.reload,
         log_level=config.logging.level.lower(),
     )
-
